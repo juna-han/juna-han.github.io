@@ -2,7 +2,7 @@
 
 A personal portfolio website showcasing my creative work.
 
-## Technologies Used
+## Tools Used
 
 - HTML5
 - CSS3
