@@ -1,0 +1,319 @@
+<!--
+Copyright (c) 2024 Juna Han
+Licensed under MIT License - see LICENSE file for details
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nest.</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .intro-section {
+            position: relative;
+            height: 596px;
+            background: #FF5500;
+            margin-top: 104px;
+            margin-bottom: 36px;
+            width: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .intro-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            mix-blend-mode: screen;
+            position: absolute;
+        }
+
+        .intro-title {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Nunito', sans-serif;
+            font-weight: 900;
+            font-size: 96px;
+            color: #FF5500;
+            mix-blend-mode: overlay;
+            letter-spacing: -0.4px;
+        }
+
+        @media (max-width: 960px) {
+            .intro-title {
+                font-size: 72px;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .intro-title {
+                font-size: 56px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .intro-title {
+                font-size: 40px;
+            }
+
+        .image-container-cropped {
+            position: relative;
+            height: 591.25px;
+            overflow: hidden;
+            }
+
+        .image-container-cropped video {
+            position: absolute;
+            width: calc(100% + 60px);
+            height: calc(100% + 60px);
+            object-fit: cover;
+            object-position: center;
+            margin: -30px;
+            transform: scale(0.95);
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-items">
+            <a href="index.html" class="home-icon">
+                <div class="square"></div>
+            </a>
+            <a href="pixels.html" class="next-icon">
+                <div class="triangle"></div>
+            </a>
+        </div>
+    </nav>
+
+    <div class="side-text">Nest.</div>
+    <div class="side-text-right">Next</div>
+
+    <main class="container">
+        <section class="intro-section">
+            <video class="intro-video" autoplay loop muted playsinline>
+                <source src="images/nest-hero-banner.mp4" type="video/mp4">
+            </video>
+            <h1 class="intro-title">Nest.</h1>
+        </section>
+        <section class="intro-grid">
+            <div class="intro-label">Duration</div>
+            <div class="intro-content">4 months, 2024</div>
+
+            <div class="intro-label">Supervised by</div>
+            <div class="intro-content">Prof. Dr. Tina Weisser, Christina Ebert</div>
+
+            <div class="intro-label">Project type</div>
+            <div class="intro-content">Service design concept for project “Playful Healthcare Design”</div>
+
+            <div class="intro-label">Description</div>
+            <div class="intro-content">Giving young cancer patients a safe space of autonomy and self-control that is stripped of them during hospitalisation through an interactive immersive experience.</div>
+
+            <div class="intro-label">Brief</div>
+            <div class="intro-content">How can user-centered design and playfulness be integrated into healthcare service design to create services that enhance engagement, compliance, and overall user experience for patients and other stakeholders?</div>
+
+            <div class="intro-label">Summary</div>
+            <div class="intro-content">“Nest” addresses a critical gap in traditional healthcare services that often overlook the specific needs of children and teenagers by utilising the Playful Healthcare design approach, which recognises the value of games in transforming care experiences for young patients. This demographic’s deep connection to digital media creates a unique opportunity to use gamification as a therapeutic and educational tool, with studies showing it can increase engagement by 34% and adherence by 20% (Deloitte Insights, 2020). Our aim was to deliver an interactive and immersive experience that empowers young cancer patients to regain autonomy to build emotional resilience through personalised and positive experiences, rooted in AI-powered user research and evidence-based design.</div>
+        
+            <div class="intro-label">Team</div>
+            <div class="intro-content">Vlad Panait, Daryna Derepa, Juna Han</div>
+
+            <div class="intro-label">Role contribution</div>
+            <div class="intro-content">The project was a collaborative effort, with individual contributions as follows: Vlad: Training of GPT-Personas, concept branding, 2D animations. Daryna: Stakeholder map, real-life prototyping, material research, ZwickyBox. Juna: Concept sketches, structural design of Nest, 3D modeling and animations.
+            </div>
+        </section>
+
+        <!-- Main content sections -->
+        <section class="main-section">
+            <div style="margin: 36px 0"></div>
+            <div class="image-container">
+                <img src="images/nest-1.svg" alt="Nest.">
+            </div>
+            <p>Our team followed the Service Design Thinking Process throughout the project to systematically extract insights, identify challenges, and ideate impactful solutions. We selected young cancer patients as our target group due to the unique challenges they face as youth during extended hospitalisations. We began with a Stakeholder Map to identify both direct and indirect stakeholders. Key questions were: Who is affected? Who can provide insights or inspiration? Next, we used an Actors Map to analyse the relationships between these stakeholders to identify potential pain points. These hypotheses served not as conclusions but rather as tools to develop discussion guides for engaging with stakeholders, ensuring that the insights gained were rooted in real-life experiences.</p>
+            <div class="image-container">
+                <img src="images/nest-2.svg" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-3.svg" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-4.svg" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-5.svg" alt="Nest.">
+            </div>
+            <p>We used ChatGPT to assist in drafting discussion guides, tailoring questions for key stakeholders—hospital staff, young cancer patients undergoing treatment, and their guardians, in order to extract meaningful insights while maintaining a sensitive tone. Our goal was to understand:</p>
+            <p style="margin: 0">• Whether our hypotheses aligned with their realities.</p>
+            <p style="margin: 0">• A typical day in the life of a young cancer patient.</p>
+            <p style="margin: 0">• Current forms of support available and areas for improvement.</p>
+            <div class="image-container">
+                <img src="images/nest-6.svg" alt="Nest.">
+            </div>
+            <p>However, when outreach to pediatric facilities yielded no responses for an extended period, we had to adapt quickly. Using ChatGPT, we simulated custom personas to simulate interviews with our target groups to extract insights, replacing direct stakeholder input. The personas—Maxi, a 7-year-old leukemia patient; Julia, a 16-year-old general patient; and Helena, a 36-year-old assistant doctor—were developed using a detailed prompt in the GPT Builder. The prompt outlined each persona’s background, behaviour, psychological state, rules to ensure realistic responses, and additional information derived from literature and real-life interviews. At the same time, we conducted desk research to test our hypotheses. This strategy allowed us to make progress in the research phase and gather insights despite the initial challenges. In addition, these personas were also used in the prototyping phase to assess our initial rough ideas.</p>
+            <div class="image-container">
+                <video autoplay loop muted playsinline>
+                    <source src="images/nest-7.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="image-container">
+                <img src="images/nest-8.svg" alt="Nest.">
+            </div>
+            <p>Fortunately, our survey received responses from two nurses and two psychologists. Additionally, we conducted an interview with Ms. Charlotte Liepelt, a clinic clown specialising in pediatric care. To organise the findings, we categorised them into User Research Walls, which were distilled into insights spanning Pains, Gains, Needs, and Opportunities.</p>
+            <div class="image-container">
+                <img src="images/nest-9.png" alt="Nest.">
+            </div>
+            <p>Here are our key takeaways: Young cancer patients, from children to teenagers, struggle with loss of autonomy as they rely heavily on caregivers, which impacts their self-confidence. Their daily life is shaped by strict medical routines, leaving little room for individuality or spontaneous activities. Even relaxation activities are often imposed on them. Older children, in particular, are affected by social isolation, as they feel disconnected from their peers and normal life, and a lack of privacy, which becomes more challenging as they grow. Despite these difficulties, certain aspects of the hospital experience offer support. Positive relationships with caregivers provide emotional security, and many hospitals offer recreational activities that provide entertainment. Children are also offered intensive individual care, which plays a vital role in their emotional coping. Our research also highlighted critical areas of improvement: providing more choice and flexibility in daily routines, encouraging open discussions about emotions, and integrating familiar elements of home life to maintain a sense of normality. Additionally, improved training for caregivers to address pain perception, greater availability of psychological support outside regular hours, and private spaces for relaxation and emotional conversations emerged as essential needs. Finally, it was suggested that incorporating creative outlets can further enhance engagement and emotional resilience.</p>
+            <p>Based on these insights, we established the following goals:</p>
+            <p style="margin: 0">• Enable freedom of choice: Restore a sense of autonomy and control by offering patients freedom of choice, allowing them to decide what they want to explore based on their individual needs outside of scheduled treatment times.</p>
+            <p style="margin: 0">• Reconnect with normal life: Integrate familiar elements of their everyday lives to provide a distraction from the hospital environment, helping them redirect their focus toward and reconnect with healthy, familiar and positive aspects of life.</p>
+            <p style="margin: 0">• Create a safe space: Offer an environment where they are encouraged to openly share their thoughts and emotions.</p>
+            <p>These goals and insights guided the project’s focus question for the ideation phase: “How might we empower young cancer patients to restore a sense of autonomy and control to build emotional resilience through personalised and positive experiences?”</p>
+            <div class="image-container">
+                <img src="images/nest-10.svg" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-11.png" alt="Nest.">
+            </div>
+            <p>Using the Crazy8 method, we generated 24 rapid ideas in just 8 minutes, prioritising quantity over quality to explore a wide range of possibilities. From this pool, we selected the ideas with the greatest potential for further development. To evaluate these ideas comprehensively, we applied the Six Thinking Hats method, examining each idea from six perspectives: optimistic, pessimistic, analytical, emotional, creative, and organisational. This approach allowed us to identify both the strengths and limitations of each idea, providing a clear direction for further development.</p>
+            <div class="image-container">
+                <img src="images/nest-12.svg" alt="Nest.">
+            </div>
+            <p>At this point, we knew we wanted to create an immersive experience. Using the ZwickyBox method, we conducted structured ideation around the concept of “immersive experience.” We divided the keyword into distinct categories, assigned values to each, and combined these values to generate diverse concept directions. Several key considerations emerged during this process. Personalised input was prioritised to ensure the experience could adapt to each patient’s unique needs and preferences. Hands-on interaction—drawing, writing, and other manual activities—was identified as a valuable way to foster creativity. Additionally, we decided to focus our concept on children aged 8-10 and older, as younger children in critical developmental stages benefit more from virtual-free activities that support their motor, sensory, and language development.</p>
+            <div class="image-container">
+                <img src="images/nest-13.jpg" alt="Nest." style="filter: saturate(0);">
+            </div>
+            <p>The brainstorming process began with a focus on soft, round shapes, contrasting the sharp, cold forms commonly associated with hospitals, such as syringes and medical equipment. This exploration inspired the concept of a “Nest”—a cozy “safe space” designed to offer comfort and emotional support for patients. The Nest is a tent-like structure mounted on the wall above the patient’s bed, easily deployable by turning a lever. This creates a private and inviting space without disrupting the shared hospital environment. To overcome the challenge of designing a practical yet unobtrusive solution, we drew inspiration from collapsible, origami-like designs. After multiple iterations, we developed a structure that is simple to set up, seamlessly integrates into hospital rooms, and provides ample coverage and comfort.</p>
+            <p>Inside the Nest, patients can access the Egg by pulling down a lever. The Egg is an interactive device housed in its own small resting plate. It serves as a bridge between the physical and digital worlds, using an AI assistant to process tactile and auditory inputs, delivering personalised experiences through projections and sound. Nest carries multiple meanings: it is the resting place for the Egg, the projection canopy surrounding the bed, and a symbol of comfort and security. Young cancer patients, who face the daily challenges of illness and strict routines, often lack opportunities to simply be “kids” and pursue their specific individual needs despite the availability of many recreational activities. With Nest, we aim to support these patients and give some of that freedom back to them. By deploying the canopy, patients create a private safe space, take full control of the Egg, and independently determine the content of the projections based on their own needs and wishes.</p>
+            <div class="image-container">
+                <img src="images/nest-14.png" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-15.png" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-16.png" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-17.png" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-18.png" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-19.svg" alt="Nest.">
+            </div>
+            <div class="image-container interaction-layout">
+                <img src="images/nest-20.svg" alt="Nest." class="interaction-background">
+                <div class="stacked-eggs">
+                    <div class="egg-one">
+                        <img src="images/nest-20-1.gif" alt="Egg animation">
+                    </div>
+                    <div class="middle-eggs">
+                        <div class="egg-two">
+                            <img src="images/nest-20-2.gif" alt="Egg animation">
+                        </div>
+                        <div class="egg-three">
+                            <video autoplay loop muted playsinline>
+                                <source src="images/nest-20-3.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+                    <div class="egg-modes">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/nest-20-4.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay loop muted playsinline>
+                            <source src="images/nest-20-5.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay loop muted playsinline>
+                            <source src="images/nest-20-6.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay loop muted playsinline>
+                            <source src="images/nest-20-7.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="egg-bottom">
+                        <img src="images/nest-20-8.gif" alt="Egg animation">
+                        <video autoplay loop muted playsinline>
+                            <source src="images/nest-20-9.mp4" type="video/mp4">
+                        </video>
+                        <video autoplay loop muted playsinline>
+                            <source src="images/nest-20-10.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <p>Nest addresses the brief by incorporating playfulness into healthcare service design, improving the hospitalisation experience for young cancer patients. In line with the focus question, Nest empowers patients to regain a sense of autonomy and control while building emotional resilience through personalised and positive interactions. How? Nest provides patients with choice and flexibility, allowing them to participate in transforming their space according to their needs. With full control over input and output, patients actively shape their environment, fostering a sense of independence. This immersive experience offers an escape from the hospital routine, enabling patients to step into a new world where fears, uncertainties and similar emotions are no longer central. Additionally, Nest creates a personal, judgement-free space, encouraging patients to openly share their thoughts, needs, and emotions. Their input is immediately reflected in their environment as a gamified element. Rather than passively consuming traditional digital content, patients engage in an uplifting interaction that prioritises their emotional well-being.</p>
+            <div class="image-container">
+                <img src="images/nest-21.jpg" alt="Nest.">
+            </div>
+            <p>To address key challenges during development, we focused on making the Nest accessible across different patient groups. The Nest and the Egg operate entirely through tactile and auditory feedback, without buttons or screens, ensuring it remains intuitive even in less-than-ideal conditions, such as after treatment. Material challenges were also addressed by finding textiles that fulfil the requirements for the Nest and using soft and durable silicone to conceal delicate technical components for the Egg to create a plush, hygienic device. We identified the material requirements as the following: Breathable, heat- and moisture-resistant, hypoallergenic, skin-friendly, durable, easy to clean, sound-dampening, and light-blocking.</p>
+            <div class="image-container">
+                <img src="images/nest-22.jpg" alt="Nest.">
+            </div>
+            <p>We created a prototype of the Egg by milling a mould, constructing the mould framework, and pouring silicone into it. The result is a prototype featuring a soft silicone layer that mimics the intended tactile feel, with integrated LEDs whose colors can be adjusted using a remote control.</p>
+            <div class="image-container">
+                <img src="images/nest-23.svg" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-24.png" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-25.svg" alt="Nest.">
+            </div>
+            <p>We created two user journeys to illustrate practical applications of Nest. First, we meet Maxi, a 7-year-old boy who uses the Egg’s speech mode to narrate his emotions and activate comforting projections. Drawing inspiration from his love of football, these experiences give him hope and help him better articulate his dreams, needs, and daily life. Then, we meet Julia, a 12-year-old girl who uses the Egg’s drawing mode to create vibrant visuals. Within the Nest’s safe environment, Julia finds a creative outlet that shifts her focus from physical changes like hair loss to her inner self as an artist. Julia is also enabled to communicate with loved ones within her safe space. To simulate the processes within the Egg, we developed an Egg-GPT, which analyses user inputs—whether speech or drawings—and generates prompts for video projection and sound. Using Runway, we created final personalised videos based on these prompts, ensuring dynamic, immersive visual experiences tailored to each patient’s inputs.</p>
+            <div class="image-container">
+                <img src="images/nest-26.svg" alt="Nest.">
+            </div>
+            <div class="image-container">
+                <img src="images/nest-27.svg" alt="Nest.">
+            <div class="image-container-cropped">
+                <video autoplay loop muted playsinline>
+                    <source src="images/nest-28.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="image-container-cropped">
+                <video autoplay loop muted playsinline controls>
+                    <source src="images/nest-29.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="image-container-cropped">
+                <video autoplay loop muted playsinline>
+                    <source src="images/nest-30.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="image-container-cropped">
+                <video autoplay loop muted playsinline>
+                    <source src="images/nest-31.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="image-container-cropped">
+                <video autoplay loop muted playsinline controls>
+                    <source src="images/nest-32.mp4" type="video/mp4">
+                </video>
+            </div>
+            <div class="image-container-cropped">
+                <video autoplay loop muted playsinline>
+                    <source src="images/nest-33.mp4" type="video/mp4">
+                </video>
+            </div>
+            <h2>What’s next?</h2>
+            <div class="image-container" style="filter: brightness(1.2) contrast(1.1) sepia(100%) opacity(0.85) saturate(100%) hue-rotate(-48deg);">
+                <img src="images/nest-34.png" alt="Nest.">
+            </div>
+            <p>With Nest, we aimed to address the often-overlooked emotional needs of young cancer patients and transform their hospital experience by prioritizing autonomy, self-expression, and support for complex emotional challenges, offering more than basic entertainment. One of the greatest challenges was engaging directly with young cancer patients and stakeholders due to strict data privacy policies. This limitation taught us the importance of adaptability. By leveraging GPT-Personas and conducting desk research as alternative approaches, we gained meaningful insights. Learning about the daily lives of young patients and seeing our initial assumptions evolve into tangible insights was a rewarding experience. This journey underscored the importance of designing for the nuanced emotional needs of young cancer patients. Within our team, we faced challenges in coordination and meeting deadlines but overcame them through transparent communication. Looking ahead, the next step is to test Nest directly with young cancer patients, which was not feasible during this project. We would also like to explore integration with existing therapeutic tools and adapt the concept for diverse pediatric contexts. With Nest, we hope to bridge the gap in emotional care for young cancer patients, providing them with the tools to navigate their journey with greater comfort.</p>
+        </section>
+    </main>
+    <footer>
+        <span>Icon attribution: Flaticon, BizzBox</span>
+        <span><a href="impressum.html">Impressum</a></span>
+        <span>Copyright ©Juna Han</span>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

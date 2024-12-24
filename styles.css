@@ -1,0 +1,675 @@
+/*
+Copyright (c) 2024 Juna Han
+Licensed under MIT License - see LICENSE file for details
+*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #000;
+    background: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1060px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Hero image */
+.hero-image {
+    width: 100%;
+    height: 188px;
+    overflow: hidden;
+    margin-top: 104px;
+    margin-bottom: 36px;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Images */
+
+/* Disable right-click context menu on images */
+img {
+    -webkit-user-select: none;  /* Safari */
+    -ms-user-select: none;      /* IE 10 and IE 11 */
+    user-select: none;          /* Standard syntax */
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    pointer-events: none;       /* Prevents right-click menu */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin: 36px 0;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Other styling functions */
+.image-container img,
+.image-container gif {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: none;
+}
+
+.image-container video {
+    width: 100%;
+    height: auto;
+    display: block;
+    background: none;
+    object-fit: cover; /* Ensures video fills container without distortion */
+}
+
+/* Cropping for Nest */
+.image-container-cropped {
+    position: relative;
+    height: 591.25px;
+    overflow: hidden;
+    margin: 36px 0;
+}
+
+.image-container-cropped video {
+    position: absolute;
+    width: calc(100% + 60px);
+    height: calc(100% + 60px);
+    object-fit: cover;
+    object-position: center;
+    top: -30px;
+    left: -30px;
+    transform: scale(0.95);
+}
+
+/* Text content */
+p {
+    margin: 18px 0;
+}
+
+/* Container for side-by-side paragraphs */
+.text-columns {
+    display: flex;
+    gap: 40px; /* Space between columns */
+    margin: 18px 0;
+}
+
+/* Each column of paragraphs */
+.text-column {
+    flex: 1; /* Each column takes equal width */
+}
+
+/* Stack columns on mobile */
+@media (max-width: 768px) {
+    .text-columns {
+        flex-direction: column;
+        gap: 0; /* Remove gap when stacked */
+    }
+}
+
+/* Side texts */
+.side-text,
+.side-text-right {
+    position: fixed;
+    writing-mode: vertical-rl;
+    top: 189px;
+    z-index: 1;
+    color: rgba(0, 0, 0, 0.75);
+    white-space: nowrap; /* Prevent text wrapping */
+    height: auto; /* Allow text to maintain its natural height */
+    width: auto; /* Allow text to maintain its natural width */
+}
+
+.side-text {
+    left: 84px;
+    transform: rotate(180deg);
+}
+
+.side-text-right {
+    right: 84px;
+    transform: rotate(0deg);
+}
+
+/* Hide side texts when they would overlap container */
+@media (max-width: 1300px) { /* Adjust this value based on your container width */
+    .side-text,
+    .side-text-right {
+        opacity: 0;
+        pointer-events: none; /* Prevents any interaction with hidden texts */
+    }
+}
+
+/* Intro section */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 18px;
+    margin-bottom: 36px;
+}
+
+.intro-label,
+.impressum-bold {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.intro-content {
+    font-size: 16px;
+}
+
+.section-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    letter-spacing: -1px;
+    margin-bottom: 36px;
+}
+
+/* Footer */
+footer {
+    max-width: 1228px;
+    margin: 0 auto;
+    padding: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 65px;
+}
+
+a, 
+a:visited {
+    color: rgba(0, 0, 0); 
+    text-decoration: none;
+}
+
+a:hover {
+    font-weight: 500;
+}
+
+/* Add spacing between footer items */
+footer span + span {
+    margin-left: 40px;
+}
+
+/* Ensure footer is at bottom */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 25px;
+}
+
+main {
+    flex: 1;
+}
+
+@media (max-width: 960px) {
+    .container {
+        padding: 0 15px;
+    }
+
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .side-text,
+    .side-text-right {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 28px;
+    }
+
+    .hero-image {
+        height: 140px;
+        margin-top: 70px;
+    }
+
+    .navbar {
+        height: 70px;
+    }
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 104px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(50px);
+    z-index: 1000;
+
+}.nav-items {
+    width: 100%;
+    height: 189px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.home-icon, .next-icon {
+    width: 189px;
+    height: 189px;
+    position: relative;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline from links */
+    display: block; /* Ensure the link takes full space */
+}
+
+.square {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 84px;
+    left: 84px;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 81px;
+    left: 84px;
+    border-left: 11.5px solid transparent;
+    border-right: 11.5px solid transparent;
+    border-bottom: 20px solid rgba(0, 0, 0, 0.75);
+    transform: rotate(90deg);
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Base hover shapes */
+.home-icon::after {
+    content: '';
+    position: absolute;
+    top: 62px;
+    left: 82px;
+    border-left: 12.5px solid transparent;
+    border-right: 12.5px solid transparent;
+    border-bottom: 20px solid rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.next-icon::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 15px;
+    top: 84px;
+    left: 53px;
+    background: rgba(0, 0, 0, 0.75);
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+    .home-icon::after {
+        top: 45px;
+        left: 60px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 16px solid rgba(0, 0, 0, 0.75);
+    }
+
+    .next-icon::after {
+        width: 24px;
+        height: 12px;
+        top: 64px;
+        left: 38px;
+    }
+
+    .triangle {
+        top: 60px;
+        left: 62px;
+        border-left: 9px solid transparent;
+        border-right: 9px solid transparent;
+        border-bottom: 15.6px solid rgba(0, 0, 0, 0.75);
+    }
+}
+
+@media (max-width: 480px) {
+    .home-icon::after {
+        top: 31px;
+        left: 41px;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 12px solid rgba(0, 0, 0, 0.75);
+    }
+
+    .next-icon::after {
+        width: 18px;
+        height: 9px;
+        top: 45px;
+        left: 26px;
+    }
+
+    .triangle {
+        top: 41px;
+        left: 43px;
+        border-left: 6.5px solid transparent;
+        border-right: 6.5px solid transparent;
+        border-bottom: 11.3px solid rgba(0, 0, 0, 0.75);
+    }
+}
+
+/* Hover states just need to change opacity */
+.home-icon:hover::after,
+.next-icon:hover::after {
+    opacity: 1;
+}
+
+/* Media queries for the navbar */
+@media (max-width: 768px) {
+    .nav-items {
+        height: 140px;
+    }
+
+    .home-icon, .next-icon {
+        width: 140px;
+        height: 140px;
+    }
+
+    .square {
+        width: 16px;
+        height: 16px;
+        top: 62px;
+        left: 62px;
+    }
+
+    .triangle {
+        top: 60px;
+        left: 62px;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 20px solid rgba(0, 0, 0, 0.75);
+    }
+}
+
+/* Media queries */
+@media (max-width: 480px) {
+    .nav-items {
+        height: 100px;
+    }
+
+    .home-icon, .next-icon {
+        width: 100px;
+        height: 100px;
+    }
+
+    .square {
+        width: 14px;
+        height: 14px;
+        top: 43px;
+        left: 43px;
+    }
+
+    .triangle {
+        top: 41px;
+        left: 43px;
+        border-left: 8px solid transparent;
+        border-right: 8px solid transparent;
+        border-bottom: 16px solid rgba(0, 0, 0, 0.75);
+    }
+}
+
+/* Base transitions */
+.square,
+.triangle {
+    /* ... existing properties ... */
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Make icons disappear when hovering over nav-items */
+.nav-items:hover .square,
+.nav-items:hover .triangle {
+    opacity: 0;
+}
+
+/* Restore only the hovered icon */
+.home-icon:hover .square,
+.next-icon:hover .triangle {
+    opacity: 1;
+}
+
+/* Keep the hover effects for the appearing shapes */
+.home-icon::after,
+.next-icon::after {
+    /* ... existing properties ... */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.home-icon:hover::after,
+.next-icon:hover::after {
+    opacity: 1;
+}
+
+/* Responsive footer styles - only for home page */
+@media (max-width: 960px) {
+    .home-page footer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0px;
+    }
+}
+
+/* Nest interaction layout */
+.interaction-layout {
+    position: relative;
+    width: 100%;
+    max-width: 1060px;
+    margin: 0 auto;
+}
+
+.interaction-background {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Stacked eggs positioning - KEEP EXACT LAYOUT */
+.stacked-eggs {
+    position: absolute;
+    left: 50%;
+    top: 5%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+/* First egg - Scale sizes only */
+.egg-one {
+    width: min(250px, 25vw);
+    height: min(250px, 25vw);
+    flex-shrink: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.egg-one img {
+    object-fit: contain;  /* Preserve aspect ratio */
+    filter: brightness(1.2) contrast(1.1) opacity(0.85) sepia(100%) saturate(200%) hue-rotate(-48deg);
+}
+
+/* Middle eggs - KEEP EXACT POSITIONING */
+.middle-eggs {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.egg-two {
+    position: relative;
+    z-index: 1;
+}
+
+.egg-two img {
+    filter: brightness(1.2) contrast(1.1) opacity(0.85) sepia(100%) saturate(200%) hue-rotate(-48deg);
+}
+
+.egg-three {
+    position: absolute;
+    left: calc(50% + min(175px, 17.5vw));
+    top: -50px;
+    z-index: 1;
+}
+
+.egg-two img,
+.egg-three img {
+    width: min(250px, 25vw);
+    height: auto;
+}
+
+/* Mode eggs - KEEP EXACT LAYOUT */
+.egg-modes {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 250px;
+}
+
+.egg-modes video {
+    width: min(250px, 25vw);
+    height: auto;
+}
+
+/* Media Queries - ordered from largest to smallest */
+@media (max-width: 1024px) {
+    .egg-modes {
+        gap: 40px;
+        margin-top: 190px;
+    }
+}
+
+@media (max-width: 960px) {
+    .egg-modes {
+        gap: 30px;
+        margin-top: 180px;
+    }
+}
+
+@media (max-width: 860px) {
+    .egg-modes {
+        gap: 20px;
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .egg-modes {
+        gap: 10px;
+        margin-top: 75px;
+    }
+}
+
+@media (max-width: 570px) {
+    .egg-modes {
+        gap: 10px;
+        margin-top: 20px;
+    }
+}
+
+@media (max-width: 430px) {
+    .egg-modes {
+        gap: 10px;
+        margin-top: -10px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .egg-modes {
+        margin-top: -20px !important;
+    }
+    
+    .egg-modes video {
+        width: min(200px, 20vw);
+    }
+}
+
+/* Bottom eggs - KEEP EXACT LAYOUT */
+.egg-bottom {
+    width: 100%;
+    position: relative;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.egg-bottom img {
+    width: min(250px, 25vw);
+    height: min(250px, 25vw);
+    object-fit: contain;  /* Preserve aspect ratio */
+    filter: brightness(1.2) contrast(1.1) opacity(0.85) sepia(100%) saturate(200%) hue-rotate(-48deg);
+}
+
+.egg-bottom video {
+    width: min(450px, 25vw);
+    height: auto;
+    margin: 150px 0;
+    max-width: none;  /* Remove any max-width constraints */
+    object-fit: contain;  /* Maintain aspect ratio */
+}
+
+/* Responsive adjustments if needed */
+@media (max-width: 1024px) {
+    .egg-bottom video {
+        width: min(25vw, 90vw);  /* Using viewport width units */
+        margin: 20vh 0;  /* Using viewport height units for vertical spacing */
+    }
+}
+
+@media (max-width: 768px) {
+    .egg-bottom video {
+        width: min(25vw, 90vw);  /* Using viewport width units */
+        margin: 7.5vh 0;  /* Using viewport height units for vertical spacing */
+    }
+}
+
+@media (max-width: 1024px) {
+    .egg-bottom {
+        margin-top: clamp(5vh, 15vh, 25vh);  /* Responsive margin using viewport height */
+    }
+}
